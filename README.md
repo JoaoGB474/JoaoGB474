@@ -1,6 +1,8 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1f2937&height=140&section=header&text=Jo%C3%A3o%20Gabriel%20Kirchesch&fontSize=36&fontColor=e6edf3&fontAlignY=42&desc=Software%20Engineer%20%C2%B7%20Distributed%20Systems%20%C2%B7%20Platform&descSize=15&descAlignY=70&descColor=8b949e" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,50:1f2937,100:58a6ff&height=180&animation=twinkling&section=header&text=Jo%C3%A3o%20Gabriel%20Kirchesch&fontSize=36&fontColor=e6edf3&fontAlignY=36&desc=Software%20Engineer%20%C2%B7%20Distributed%20Systems%20%C2%B7%20Platform&descSize=15&descAlignY=56&descColor=8b949e" width="100%" />
+
+<a href="https://github.com/JoaoGB474"><img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=620&lines=Building+multi-tenant+platforms;Real-time+systems+on+the+edge;Creator+of+perfil.wtf+%26+Arkanis;simple+%3E+clever" /></a>
 
 <a href="https://perfil.wtf"><img src="https://img.shields.io/badge/perfil.wtf-0d1117?style=flat-square&logo=cloudflare&logoColor=F38020" /></a>
 <a href="mailto:joaobernardino474@gmail.com"><img src="https://img.shields.io/badge/email-0d1117?style=flat-square&logo=gmail&logoColor=EA4335" /></a>
@@ -8,7 +10,7 @@
 
 </div>
 
----
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 Engenheiro de software full stack. Projeto e opero produtos de ponta a ponta — modelagem de dados, APIs, infraestrutura na edge, serviços de longa duração e a interface que o usuário final vê.
 
@@ -24,9 +26,11 @@ const joao = {
 };
 ```
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
 ## Trabalho em destaque
 
-### Arkanis — plataforma de bots para Discord
+### <img src="https://media.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif" width="24"> Arkanis — plataforma de bots para Discord
 
 Infraestrutura para criar, hospedar e operar múltiplos bots de Discord a partir de um único painel.
 
@@ -36,7 +40,7 @@ Infraestrutura para criar, hospedar e operar múltiplos bots de Discord a partir
 
 `TypeScript` · `Node.js` · `SurrealDB` · `Discord Gateway`
 
-### [perfil.wtf](https://perfil.wtf) — perfis personalizáveis em produção
+### <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="24"> [perfil.wtf](https://perfil.wtf) — perfis personalizáveis em produção
 
 Plataforma pública de perfis com links, música, presença do Discord em tempo real, feed de imagens, loja e painel administrativo.
 
@@ -66,3 +70,12 @@ Plataforma pública de perfis com links, música, presença do Discord em tempo 
 <div align="center">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=JoaoGB474&bg_color=0d1117&color=8b949e&line=58a6ff&point=e6edf3&area=true&hide_border=true" width="100%" />
 </div>
+
+<div align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JoaoGB474/JoaoGB474/output/snake-dark.svg" />
+    <img src="https://raw.githubusercontent.com/JoaoGB474/JoaoGB474/output/snake.svg" width="100%" />
+  </picture>
+</div>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:58a6ff,50:1f2937,100:0d1117&height=110&section=footer&animation=twinkling" width="100%" />
