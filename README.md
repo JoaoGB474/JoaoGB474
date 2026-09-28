@@ -40,6 +40,22 @@ Infraestrutura para criar, hospedar e operar múltiplos bots de Discord a partir
 
 `TypeScript` · `Node.js` · `SurrealDB` · `Discord Gateway`
 
+<details>
+<summary><b>Arquitetura</b></summary>
+
+```mermaid
+flowchart LR
+  D[Dashboard] -->|config / tenants| DB[(SurrealDB)]
+  DB -->|live queries| R[Runtime multi-tenant]
+  R --> P1[Bot A]
+  R --> P2[Bot B]
+  R --> P3[Bot N]
+  P1 & P2 & P3 <-->|WebSocket| G[Discord Gateway]
+  R -->|estado de execução| DB
+```
+</details>
+
+
 ### <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="24"> [perfil.wtf](https://perfil.wtf) — perfis personalizáveis em produção
 
 Plataforma pública de perfis com links, música, presença do Discord em tempo real, feed de imagens, loja e painel administrativo.
@@ -53,6 +69,22 @@ Plataforma pública de perfis com links, música, presença do Discord em tempo 
 
 `Next.js` · `Cloudflare Workers` · `SurrealDB` · `OAuth2` · `Mercado Pago` · `Tailwind`
 
+<details>
+<summary><b>Arquitetura</b></summary>
+
+```mermaid
+flowchart LR
+  U[Usuário] --> CF[Cloudflare Workers<br/>Next.js 15]
+  CF --> DB[(SurrealDB)]
+  CF --> ST[Storage service]
+  CF <-->|OAuth2| DC[Discord]
+  MP[Mercado Pago] -->|webhook assinado| CF
+  PB[Presence service<br/>VPS] <-->|Gateway| DC
+  PB -->|snapshots / feed import| DB
+```
+</details>
+
+
 ## Stack
 
 <p>
@@ -60,11 +92,24 @@ Plataforma pública de perfis com links, música, presença do Discord em tempo 
   <img src="https://skillicons.dev/icons?i=cloudflare,postgres,linux,nginx,docker,git&theme=dark" />
 </p>
 
+## Como eu trabalho
+
+| | |
+|---|---|
+| **Design antes do código** | Modelo de dados e contratos primeiro; a implementação segue. |
+| **Falhas são o caso comum** | Retries idempotentes, cursores persistentes, webhooks verificados. |
+| **Custo é requisito** | Edge para o que é stateless, VPS para o que precisa de conexão persistente. |
+| **Dono do ciclo inteiro** | Do schema ao deploy, passando por monitoramento e suporte. |
+
 ## Atividade
 
 <div align="center">
   <img height="160" src="https://github-readme-stats.vercel.app/api?username=JoaoGB474&show_icons=true&count_private=true&include_all_commits=true&hide_title=true&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&icon_color=58a6ff" />
   <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JoaoGB474&layout=compact&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e" />
+</div>
+
+<div align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=JoaoGB474&theme=github_dark&no-frame=true&no-bg=true&margin-w=6&column=7" />
 </div>
 
 <div align="center">
