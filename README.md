@@ -1,63 +1,68 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=180&section=header&text=João%20Gabriel&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=38&desc=Desenvolvedor%20Full%20Stack&descAlignY=58&descSize=18" />
+<img src="https://capsule-render.vercel.app/api?type=rect&color=0:0d1117,100:1f2937&height=140&section=header&text=Jo%C3%A3o%20Gabriel%20Kirchesch&fontSize=36&fontColor=e6edf3&fontAlignY=42&desc=Software%20Engineer%20%C2%B7%20Distributed%20Systems%20%C2%B7%20Platform&descSize=15&descAlignY=70&descColor=8b949e" width="100%" />
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=18&pause=1200&color=A78BFA&center=true&vCenter=true&width=500&lines=TypeScript+%E2%80%A2+Node.js+%E2%80%A2+Next.js;Bots+para+Discord+em+escala;Criador+do+perfil.wtf" />
+<a href="https://perfil.wtf"><img src="https://img.shields.io/badge/perfil.wtf-0d1117?style=flat-square&logo=cloudflare&logoColor=F38020" /></a>
+<a href="mailto:joaobernardino474@gmail.com"><img src="https://img.shields.io/badge/email-0d1117?style=flat-square&logo=gmail&logoColor=EA4335" /></a>
+<img src="https://img.shields.io/badge/Brasil-0d1117?style=flat-square&logo=googlemaps&logoColor=34A853" />
 
 </div>
 
-## 👨‍💻 Sobre mim
+---
 
-Desenvolvedor full stack brasileiro, focado em **TypeScript** e em construir produtos completos — do banco de dados à interface, passando pela infraestrutura.
-Gosto de arquitetura de sistemas, tempo real e de transformar ideias em produtos que as pessoas usam de verdade.
+Engenheiro de software full stack. Projeto e opero produtos de ponta a ponta — modelagem de dados, APIs, infraestrutura na edge, serviços de longa duração e a interface que o usuário final vê.
 
-- 🔭 Construindo o ecossistema **Arkanis** e o **perfil.wtf**
-- 🌱 Estudando sistemas distribuídos, bancos multi-modelo e edge computing
+Meu foco está em **sistemas multi-tenant**, **tempo real** e **arquiteturas que custam pouco para rodar e pouco para manter**. Prefiro poucas peças bem escolhidas a muitas peças da moda, e trato observabilidade, idempotência e consistência transacional como requisitos, não como extras.
 
-## 🛠️ Stack
+```ts
+const joao = {
+  focus:      ["platform engineering", "real-time systems", "product"],
+  languages:  ["TypeScript", "JavaScript", "SQL / SurrealQL"],
+  runtime:    ["Node.js", "Cloudflare Workers", "Linux (VPS)"],
+  data:       ["SurrealDB", "PostgreSQL"],
+  principles: ["simple > clever", "idempotent by default", "own the whole stack"],
+};
+```
+
+## Trabalho em destaque
+
+### Arkanis — plataforma de bots para Discord
+
+Infraestrutura para criar, hospedar e operar múltiplos bots de Discord a partir de um único painel.
+
+- **Runtime multi-tenant** — um pool de processos gerencia N bots de clientes diferentes; o estado desejado vive no banco e o runtime converge para ele (modelo declarativo, sem deploy por bot).
+- **SurrealDB como fonte de verdade** — configuração, tenants e estado de execução no mesmo modelo, com consultas em tempo real para propagar mudanças.
+- **Dashboard de gestão** — provisionamento, configuração e acompanhamento dos bots sem acesso à infraestrutura.
+
+`TypeScript` · `Node.js` · `SurrealDB` · `Discord Gateway`
+
+### [perfil.wtf](https://perfil.wtf) — perfis personalizáveis em produção
+
+Plataforma pública de perfis com links, música, presença do Discord em tempo real, feed de imagens, loja e painel administrativo.
+
+- **Edge-first** — Next.js 15 servido por Cloudflare Workers (OpenNext), com roteamento por subdomínio e host no middleware.
+- **Serviço de presença dedicado** — processo persistente conectado ao Gateway do Discord, mantendo snapshots de presença fora do ciclo request/response.
+- **Importação idempotente** — ingestão de histórico em lotes com cursor persistente, retomável após falhas e reinícios.
+- **Pagamentos consistentes** — webhooks do Mercado Pago validados por assinatura; pedidos e benefícios atualizados na mesma transação.
+- **Storage próprio** — serviço autenticado de upload com limites por tipo de mídia.
+- **Migração de dados** — transição de PostgreSQL para SurrealDB sem perda de registros existentes.
+
+`Next.js` · `Cloudflare Workers` · `SurrealDB` · `OAuth2` · `Mercado Pago` · `Tailwind`
+
+## Stack
 
 <p>
-  <img src="https://skillicons.dev/icons?i=ts,js,nodejs,react,nextjs,tailwind,html,css&theme=dark" /><br/>
-  <img src="https://skillicons.dev/icons?i=postgres,cloudflare,linux,docker,git,github,vscode,discord&theme=dark" />
+  <img src="https://skillicons.dev/icons?i=ts,js,nodejs,nextjs,react,tailwind&theme=dark" /><br/>
+  <img src="https://skillicons.dev/icons?i=cloudflare,postgres,linux,nginx,docker,git&theme=dark" />
 </p>
 
-## 🚀 Projetos em destaque
-
-### ⚔️ Arkanis
-Plataforma para criar e operar bots de Discord em escala.
-
-| Módulo | Descrição |
-|---|---|
-| **arkanis** | Dashboard de gerenciamento da fábrica de bots |
-| **arkanis-bot** | Runtime multi-tenant: um pool de bots orquestrado a partir do SurrealDB |
-| **Arkanis-goat** | Cliente próprio integrado ao ecossistema |
-
-`TypeScript` `Node.js` `SurrealDB` `Discord API`
-
-### 🌐 [perfil.wtf](https://perfil.wtf)
-Páginas de perfil personalizadas com links, música, presença do Discord em tempo real, feed de imagens, loja e painel administrativo.
-
-- Next.js 15 rodando em **Cloudflare Workers** (OpenNext)
-- **SurrealDB** com transações para pedidos e benefícios
-- Login via **OAuth do Discord** e pagamentos com **Mercado Pago**
-- Serviço de presença conectado ao Gateway do Discord rodando em VPS
-- Serviço próprio de upload e armazenamento de mídia
-
-`TypeScript` `Next.js` `Cloudflare` `SurrealDB` `Tailwind`
-
-## 📊 Estatísticas
+## Atividade
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=JoaoGB474&show_icons=true&count_private=true&theme=tokyonight&hide_border=true" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JoaoGB474&layout=compact&theme=tokyonight&hide_border=true" />
-  <br/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JoaoGB474&theme=tokyonight&hide_border=true" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api?username=JoaoGB474&show_icons=true&count_private=true&include_all_commits=true&hide_title=true&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e&icon_color=58a6ff" />
+  <img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JoaoGB474&layout=compact&hide_border=true&bg_color=0d1117&title_color=e6edf3&text_color=8b949e" />
 </div>
 
-## 📫 Contato
-
-<p>
-  <a href="mailto:joaobernardino474@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-</p>
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=100&section=footer" width="100%" />
+<div align="center">
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=JoaoGB474&bg_color=0d1117&color=8b949e&line=58a6ff&point=e6edf3&area=true&hide_border=true" width="100%" />
+</div>
